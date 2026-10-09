@@ -109,9 +109,65 @@ a{color:#F2C5A4}a:hover{color:#FFFFFF}
 .f label{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:block}
 a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 .spot{position:absolute;inset:0;pointer-events:none;background:radial-gradient(520px circle at var(--mx,70%) var(--my,40%),rgba(140,36,51,.38),transparent 60%);transition:background .2s}
+
+/* mobile menu */
+.mnav{display:none}
+.mob-only{display:none}
+.mnav summary{list-style:none;cursor:pointer;position:fixed;top:14px;right:14px;z-index:80;display:flex;align-items:center;gap:10px;min-height:44px;padding:0 8px 0 16px;border-radius:999px;background:rgba(31,17,20,.82);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid rgba(243,233,226,.16);color:#F3E9E2}
+.mnav summary::-webkit-details-marker{display:none}
+.burger{position:relative;width:30px;height:30px;border-radius:50%;background:#F2C5A4;display:inline-block}
+.burger i{position:absolute;left:8px;right:8px;height:1.5px;background:#140A0C;transition:transform .35s ease,top .35s ease}
+.burger i:first-child{top:11px}.burger i:last-child{top:17px}
+.mnav[open] .burger i:first-child{top:14px;transform:rotate(45deg)}
+.mnav[open] .burger i:last-child{top:14px;transform:rotate(-45deg)}
+.mpanel{position:fixed;inset:0;z-index:70;background:#8C2433;display:flex;flex-direction:column;justify-content:space-between;padding:96px 22px calc(28px + env(safe-area-inset-bottom));animation:panelIn .55s cubic-bezier(.7,0,.2,1)}
+@keyframes panelIn{from{clip-path:circle(0% at calc(100% - 40px) 36px)}to{clip-path:circle(150% at calc(100% - 40px) 36px)}}
+.mpanel nav{display:flex;flex-direction:column}
+.mpanel nav a{display:flex;align-items:baseline;gap:14px;font-family:Syne,sans-serif;font-weight:800;font-size:clamp(24px,7.4vw,44px);letter-spacing:-.04em;color:#F3E9E2;text-decoration:none;padding:12px 0;border-bottom:1px solid rgba(243,233,226,.18);opacity:0;transform:translateY(24px);animation:rise .6s cubic-bezier(.2,.7,.2,1) forwards}
+.mpanel nav a .mono{color:#F2C5A4}
+.mpanel nav a:nth-child(1){animation-delay:.18s}.mpanel nav a:nth-child(2){animation-delay:.26s}.mpanel nav a:nth-child(3){animation-delay:.34s}.mpanel nav a:nth-child(4){animation-delay:.42s}
+.mfoot{display:flex;flex-direction:column;gap:18px;align-items:flex-start;opacity:0;animation:rise .6s ease .5s forwards}
+.e a,.e button,.e summary{-webkit-tap-highlight-color:transparent}
+@media (max-width: 760px){
+.e{font-size:14.5px}
+.desk-only{display:none!important}
+.mnav{display:block}
+.mob-only{display:inline}
+#hero{min-height:0!important}
+#hero header{padding-top:16px!important;padding-bottom:6px!important}
+.hero-grid{gap:18px!important;padding-bottom:36px!important}
+.hero-art{order:-1;flex-basis:100%!important;height:min(300px,78vw)!important;margin:0 -6px}
+.hero-text h1 br{display:none}
+.hero-text{flex-basis:100%!important}
+.hero-text h1{font-size:clamp(36px,10.6vw,46px)!important;margin:14px 0 16px!important}
+.hero-text p{font-size:14.5px!important;margin-bottom:22px!important}
+.hero-cta .pill{flex:1 1 auto;justify-content:center}
+.hero-foot{display:none!important}
+.mq span{font-size:24px;padding:0 14px}
+.track{gap:12px}
+.card{flex-basis:82vw}
+.card .img{height:200px}
+.h-partner{font-size:31px!important}
+.h-contact{font-size:clamp(44px,13vw,56px)!important;margin-bottom:30px!important}
+.f{grid-template-columns:1fr!important;gap:22px!important}
+.ph{border-radius:12px;line-height:1.5}
+.team-tag{font-size:10px!important;right:12px;left:12px!important;bottom:12px!important;border-radius:12px!important;text-align:center}
+.row{padding:16px 4px}
+.row .t{font-size:19px}
+.row .go{opacity:.5;transform:none}
+.need{font-size:13px;padding:9px 13px}
+.vm::after{width:260px;height:260px;right:-150px;bottom:-170px}
+.spot{background:radial-gradient(360px circle at 60% 28%,rgba(140,36,51,.42),transparent 60%)}
+footer .wrap{flex-direction:column;align-items:flex-start}
+}
+@media (hover: none){
+.row:active{color:#140A0C}.row:active::before{transform:scaleY(1)}
+.card:active{transform:scale(.985)}
+.need:active{background:#D9A441;color:#140A0C}
+}
 @media (prefers-reduced-motion: reduce){
 .e *,.e *::before,.e *::after{animation:none!important;transition:none!important}
-.curtain{display:none}.in,.word>span{opacity:1;transform:none}
+.curtain{display:none}.in,.word>span,.mpanel nav a,.mfoot{opacity:1;transform:none}
 .js-rv .rv{opacity:1;transform:none}.js-rv .mf span{opacity:1}
 }
 
@@ -149,27 +205,39 @@ img{max-width:100%}
 <span style="background: #F2ECEC; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center"><img src="../assets/logo-mark.png" alt="ALL ARE ABLE logo mark" style="width: 30px; height: auto"></span>
 <span class="syne" style="font-size: 15px; letter-spacing: -.01em; color: #F3E9E2">all are able</span>
 </a>
-<nav class="nav" aria-label="Main" style="display: flex; gap: 28px; flex-wrap: wrap; align-items: center">
+<nav class="nav desk-only" aria-label="Main" style="display: flex; gap: 28px; flex-wrap: wrap; align-items: center">
 <a href="#manifesto">Why</a><a href="#programmes">Programmes</a><a href="#partner">Partner</a><a href="#contact">Contact</a>
 </nav>
-<div style="display: flex; align-items: center; gap: 10px"><span class="dot" aria-hidden="true"></span><span class="mono muted">Uganda</span></div>
+<div class="desk-only" style="display: flex; align-items: center; gap: 10px"><span class="dot" aria-hidden="true"></span><span class="mono muted">Uganda</span></div>
+<details class="mnav">
+<summary aria-label="Open menu"><span class="mono">Menu</span><span class="burger" aria-hidden="true"><i></i><i></i></span></summary>
+<div class="mpanel">
+<nav aria-label="Mobile">
+<a href="#manifesto"><span class="mono">01</span>Why</a>
+<a href="#programmes"><span class="mono">02</span>Programmes</a>
+<a href="#partner"><span class="mono">03</span>Partner</a>
+<a href="#contact"><span class="mono">04</span>Contact</a>
+</nav>
+<div class="mfoot"><a class="pill pill-p" href="https://wa.me/256000000000">WhatsApp us <span class="arr">→</span></a><span class="mono" style="color: #F2C5A4">Empower · Include · Thrive</span></div>
+</div>
+</details>
 </header>
 
-<div class="wrap" style="width: 100%; flex: 1; display: flex; flex-wrap: wrap; align-items: center; gap: 40px; position: relative; z-index: 2; padding-bottom: 48px">
-<div style="flex: 1 1 520px; min-width: 0">
+<div class="wrap hero-grid" style="width: 100%; flex: 1; display: flex; flex-wrap: wrap; align-items: center; gap: 40px; position: relative; z-index: 2; padding-bottom: 48px">
+<div class="hero-text" style="flex: 1 1 520px; min-width: 0">
 <div class="mono in" style="color: #E8836E; animation-delay: 2.2s">● For children &amp; youth with intellectual disabilities</div>
 <h1 class="syne" style="font-size: clamp(38px,5.2vw,76px); line-height: 1.04; margin: 22px 0 26px; color: #F3E9E2">
 <span class="word"><span style="animation-delay: 2.3s">Ability</span></span> <span class="word"><span style="animation-delay: 2.38s">lives</span></span> <span class="word"><span style="animation-delay: 2.46s">in</span></span><br>
 <span class="cyc" aria-hidden="true"><span><span>painting.</span><span>baking.</span><span>music.</span><span>tailoring.</span><span>farming.</span><span>coding.</span><span>painting.</span></span></span><span style="position: absolute; left: -9999px">every young person.</span>
 </h1>
 <p class="in" style="max-width: 30em; font-size: 15px; color: #BBA8A1; margin: 0 0 30px; animation-delay: 2.6s">ALL ARE ABLE helps children and youth with intellectual disabilities discover their talents and build the skills, confidence and independence to thrive — through vocational training, creative arts and inclusive opportunities.</p>
-<div class="in" style="display: flex; gap: 10px; flex-wrap: wrap; animation-delay: 2.75s">
+<div class="in hero-cta" style="display: flex; gap: 10px; flex-wrap: wrap; animation-delay: 2.75s">
 <a class="pill pill-p" href="#partner">Partner with us <span class="arr">→</span></a>
 <a class="pill pill-g" href="#programmes">Explore programmes <span class="arr">→</span></a>
 </div>
 </div>
 
-<div style="flex: 1 1 420px; min-width: 0; position: relative; height: clamp(420px,46vw,600px)">
+<div class="hero-art" style="flex: 1 1 420px; min-width: 0; position: relative; height: clamp(420px,46vw,600px)">
 <svg class="sun" viewBox="0 0 400 400" aria-hidden="true" style="position: absolute; inset: 0; margin: auto; width: 100%; height: 100%; max-width: 600px; color: #F2C5A4; opacity: .5">
 <g stroke="currentColor" stroke-width="1.2" stroke-linecap="round" fill="none">
 <line class="ray" x1="200" y1="60" x2="200" y2="10" style="animation-delay: 1.9s"/><line class="ray" x1="270" y1="79" x2="295" y2="36" style="animation-delay: 1.95s"/><line class="ray" x1="321" y1="130" x2="364" y2="105" style="animation-delay: 2s"/><line class="ray" x1="340" y1="200" x2="390" y2="200" style="animation-delay: 2.05s"/><line class="ray" x1="321" y1="270" x2="364" y2="295" style="animation-delay: 2.1s"/><line class="ray" x1="270" y1="321" x2="295" y2="364" style="animation-delay: 2.15s"/><line class="ray" x1="200" y1="340" x2="200" y2="390" style="animation-delay: 2.2s"/><line class="ray" x1="130" y1="321" x2="105" y2="364" style="animation-delay: 2.25s"/><line class="ray" x1="79" y1="270" x2="36" y2="295" style="animation-delay: 2.3s"/><line class="ray" x1="60" y1="200" x2="10" y2="200" style="animation-delay: 2.35s"/><line class="ray" x1="79" y1="130" x2="36" y2="105" style="animation-delay: 2.4s"/><line class="ray" x1="130" y1="79" x2="105" y2="36" style="animation-delay: 2.45s"/>
@@ -189,7 +257,7 @@ img{max-width:100%}
 </div>
 </div>
 
-<div class="wrap mono muted" style="width: 100%; display: flex; justify-content: space-between; padding-bottom: 22px; position: relative; z-index: 2"><span>Scroll</span><span>01 / 07</span></div>
+<div class="wrap mono muted hero-foot" style="width: 100%; display: flex; justify-content: space-between; padding-bottom: 22px; position: relative; z-index: 2"><span>Scroll</span><span>01 / 07</span></div>
 </section>
 
 <main id="main">
@@ -221,7 +289,7 @@ img{max-width:100%}
 <div class="mono" style="color: #E8836E">03 — Programmes</div>
 <h2 class="syne" style="font-size: clamp(34px,4.6vw,64px); line-height: 1; margin: 16px 0 0">Three paths.<br><span style="color: #F2C5A4">Endless talent.</span></h2>
 </div>
-<p class="mono muted rv">Drag / scroll →</p>
+<p class="mono muted rv"><span class="desk-only">Drag / scroll →</span><span class="mob-only">Swipe →</span></p>
 </div>
 <div class="track" role="list">
 <article class="card" role="listitem">
@@ -278,7 +346,7 @@ img{max-width:100%}
 <div class="wrap" style="display: flex; flex-wrap: wrap; gap: 32px 56px; align-items: center">
 <div class="rv" style="flex: 1 1 560px; min-width: 0; border-radius: 28px; overflow: hidden; position: relative">
 <img loading="lazy" src="../assets/team.jpg" alt="Four ALL ARE ABLE team members in maroon caps and white logo polo shirts" style="display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover">
-<span class="mono" style="position: absolute; left: 16px; bottom: 16px; background: #140A0C; padding: 8px 12px; border-radius: 999px">The team ✦ [names — CLIENT TO CONFIRM]</span>
+<span class="mono team-tag" style="position: absolute; left: 16px; bottom: 16px; background: #140A0C; padding: 8px 12px; border-radius: 999px">The team ✦ [names — CLIENT TO CONFIRM]</span>
 </div>
 <div class="rv" style="flex: 1 1 320px; min-width: 0">
 <div class="mono" style="color: #E8836E">06 — Who we are</div>
@@ -294,7 +362,7 @@ img{max-width:100%}
 <div class="wrap" style="display: flex; flex-wrap: wrap; gap: 48px 72px">
 <div class="rv" style="flex: 1 1 340px">
 <div class="mono" style="color: #E8836E">07 — Partner</div>
-<h2 class="syne" style="font-size: clamp(34px,4.4vw,60px); line-height: 1; margin: 16px 0 20px">Impact that’s meaningful, measurable &amp; sustainable.</h2>
+<h2 class="syne h-partner" style="font-size: clamp(34px,4.4vw,60px); line-height: 1; margin: 16px 0 20px">Impact that’s meaningful, measurable &amp; sustainable.</h2>
 <p class="muted" style="margin: 0 0 28px; max-width: 30em">Partner with ALL ARE ABLE and help us reach more young people. Here’s what we need:</p>
 <div>
 <span class="need">Funding &amp; grants</span><span class="need">Infrastructure</span><span class="need">Learning materials</span><span class="need">Assistive equipment</span><span class="need">Scholarships</span><span class="need">Vocational tools</span><span class="need">Transport &amp; outreach</span><span class="need">Corporate sponsorship</span><span class="need">Strategic partnerships</span><span class="need">Volunteers</span>
@@ -314,7 +382,7 @@ img{max-width:100%}
 <!-- CONTACT -->
 <section id="contact" style="padding: clamp(80px,11vw,160px) 0 clamp(60px,8vw,100px); position: relative">
 <div class="wrap">
-<h2 class="syne rv" style="font-size: clamp(52px,10vw,160px); line-height: .9; margin: 0 0 48px; letter-spacing: -.05em">Let’s make<br><span style="color: #F2C5A4">ability</span> visible.</h2>
+<h2 class="syne rv h-contact" style="font-size: clamp(52px,10vw,160px); line-height: .9; margin: 0 0 48px; letter-spacing: -.05em">Let’s make<br><span style="color: #F2C5A4">ability</span> visible.</h2>
 <div style="display: flex; flex-wrap: wrap; gap: 40px 72px">
 <div class="rv" style="flex: 1 1 300px">
 <a class="pill pill-p" href="https://wa.me/256000000000" style="margin-bottom: 26px">WhatsApp us <span class="arr">→</span></a>
@@ -353,6 +421,10 @@ img{max-width:100%}
 <script>
 (function(){
   var root=document.getElementById('e-root');
+  var mnav=root.querySelector('.mnav');
+  if(mnav){[].forEach.call(mnav.querySelectorAll('a'),function(a){a.addEventListener('click',function(){mnav.open=false;});});
+    mnav.addEventListener('toggle',function(){document.documentElement.style.overflow=mnav.open?'hidden':'';mnav.querySelector('summary').setAttribute('aria-label',mnav.open?'Close menu':'Open menu');});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&mnav.open){mnav.open=false;}});}
   var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(!('IntersectionObserver' in window)||reduce)return;
   root.classList.add('js-rv');
@@ -368,7 +440,7 @@ img{max-width:100%}
     words.forEach(function(w,i){w.classList.toggle('lit',i<n)});}
   // spotlight follows cursor in hero
   var hero=document.getElementById('hero');
-  hero.addEventListener('pointermove',function(e){var r=hero.getBoundingClientRect();
+  hero.addEventListener('pointermove',function(e){if(e.pointerType!=='mouse')return;var r=hero.getBoundingClientRect();
     hero.style.setProperty('--mx',(e.clientX-r.left)+'px');hero.style.setProperty('--my',(e.clientY-r.top)+'px');});
   // magnetic buttons
   [].forEach.call(root.querySelectorAll('.pill'),function(b){
