@@ -1,18 +1,19 @@
 # ALL ARE ABLE — website design options
 
-Four static design directions for the ALL ARE ABLE website, ready for GitHub Pages.
+Five static design directions for the ALL ARE ABLE website, ready for GitHub Pages.
 
 ```
-index.html        chooser page linking to the four designs
+index.html        chooser page linking to the five designs
 design-a/         Gallery of Ability   (editorial, serif, cream + oxblood)
 design-b/         Made by Many Hands   (warm, tactile, peach + clay)
 design-c/         Seen. Valued. Able.  (bold campaign, dark + saffron)
 design-d/         The Journey          (soft, rosewood + sage, Easy Read + tabs)
+design-e/         Kinetic              (dark, animated, small refined type)
 assets/           logo, photos, favicon, organisational profile PDF
 404.html, .nojekyll
 ```
 
-Pure HTML/CSS (plus a little vanilla JS in design D). No build step. All paths are relative,
+Pure HTML/CSS (plus a little vanilla JS in designs D and E). No build step. All paths are relative,
 so it works at `https://<user>.github.io/<repo>/`.
 
 ## Publish on GitHub Pages
