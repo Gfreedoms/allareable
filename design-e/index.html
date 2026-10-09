@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ALL ARE ABLE — Empower. Include. Thrive.</title>
+<meta name="description" content="ALL ARE ABLE empowers children and youth with intellectual disabilities in Uganda through vocational training, creative arts, talent development and inclusive opportunities.">
+<meta name="theme-color" content="#140A0C">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ALL ARE ABLE — Empower. Include. Thrive.">
+<meta property="og:description" content="ALL ARE ABLE empowers children and youth with intellectual disabilities in Uganda through vocational training, creative arts, talent development and inclusive opportunities.">
+<meta property="og:image" content="../assets/painting.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&amp;family=Instrument+Sans:wght@400;500;600&amp;family=DM+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#140A0C}
+a{color:#F2C5A4}a:hover{color:#FFFFFF}
+.e{--ink:#140A0C;--ink2:#1F1114;--line:rgba(243,233,226,.12);--cream:#F3E9E2;--muted:#BBA8A1;--peach:#F2C5A4;--coral:#E8836E;--gold:#D9A441;--wine:#8C2433;font-family:'Instrument Sans',sans-serif;font-size:15px;line-height:1.6;color:var(--cream);background:var(--ink);overflow:hidden;position:relative}
+.wrap{max-width:1280px;margin:0 auto;padding:0 clamp(18px,4vw,48px);box-sizing:border-box}
+.mono{font-family:'DM Mono',monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase}
+.syne{font-family:Syne,sans-serif;font-weight:800;letter-spacing:-.035em}
+.muted{color:var(--muted)}
+.ph{border:1px dashed var(--coral);color:var(--peach);font-family:'DM Mono',monospace;font-size:11.5px;letter-spacing:.06em;border-radius:999px;padding:6px 12px;display:inline-block}
+/* buttons */
+.pill{position:relative;display:inline-flex;align-items:center;gap:10px;min-height:46px;padding:0 22px;border-radius:999px;font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;overflow:hidden;isolation:isolate;transition:color .35s ease}
+.pill::before{content:"";position:absolute;inset:0;border-radius:inherit;transform:translateY(101%);transition:transform .45s cubic-bezier(.7,0,.2,1);z-index:-1}
+.pill:hover::before{transform:translateY(0)}
+.pill-p{background:var(--peach);color:var(--ink)}.pill-p::before{background:var(--cream)}.pill-p:hover{color:var(--ink)}
+.pill-g{border:1px solid rgba(243,233,226,.35);color:var(--cream)}.pill-g::before{background:var(--cream)}.pill-g:hover{color:var(--ink)}
+.pill .arr{display:inline-block;transition:transform .35s ease}.pill:hover .arr{transform:translateX(4px) rotate(-45deg)}
+.nav a{font-family:'DM Mono',monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--cream);text-decoration:none;position:relative;padding:10px 0}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:4px;height:1px;background:var(--peach);transform:scaleX(0);transform-origin:right;transition:transform .4s ease}
+.nav a:hover::after{transform:scaleX(1);transform-origin:left}
+/* intro curtain */
+.curtain{position:absolute;inset:0;height:100vh;max-height:980px;background:var(--wine);z-index:50;display:flex;align-items:center;justify-content:center;animation:curtainUp 1s cubic-bezier(.8,0,.2,1) 1.5s forwards;pointer-events:none}
+.curtain span{font-family:Syne,sans-serif;font-weight:800;font-size:clamp(28px,5vw,64px);letter-spacing:-.03em;color:var(--cream);display:inline-block;opacity:0;transform:translateY(40px);animation:rise .6s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes curtainUp{to{transform:translateY(-101%)}}
+@keyframes rise{to{opacity:1;transform:none}}
+/* hero entrance */
+.in{opacity:0;transform:translateY(28px);animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards}
+.word{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.06em}
+.word>span{display:inline-block;transform:translateY(105%);animation:wordUp .9s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes wordUp{to{transform:none}}
+/* cycling word */
+.cyc{display:inline-block;height:1.16em;overflow:hidden;vertical-align:bottom;position:relative}
+.cyc>span{display:block;animation:cycle 12s cubic-bezier(.7,0,.2,1) infinite 2.6s}
+.cyc>span>span{display:block;height:1.16em;line-height:1.16em;color:var(--peach)}
+@keyframes cycle{0%,12%{transform:translateY(-0.0em)}16.6%,28.6%{transform:translateY(-1.16em)}33.3%,45.3%{transform:translateY(-2.32em)}50%,62%{transform:translateY(-3.48em)}66.6%,78.6%{transform:translateY(-4.64em)}83.3%,95.3%{transform:translateY(-5.8em)}100%{transform:translateY(-6.96em)}}
+/* sunburst */
+.sun{animation:spin 60s linear infinite;transform-origin:50% 50%}
+@keyframes spin{to{transform:rotate(360deg)}}
+.ray{stroke-dasharray:120;stroke-dashoffset:120;animation:draw 1.4s ease forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+/* floating photos */
+.float{animation:bob 7s ease-in-out infinite}
+.float2{animation:bob 8s ease-in-out infinite -3s}
+.float3{animation:bob 6s ease-in-out infinite -1.5s}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(var(--r,0deg))}50%{transform:translateY(-14px) rotate(var(--r,0deg))}}
+.blob{border-radius:62% 38% 46% 54% / 55% 45% 55% 45%;animation:morph 14s ease-in-out infinite}
+@keyframes morph{0%,100%{border-radius:62% 38% 46% 54% / 55% 45% 55% 45%}33%{border-radius:40% 60% 58% 42% / 44% 58% 42% 56%}66%{border-radius:52% 48% 36% 64% / 60% 38% 62% 40%}}
+/* marquee */
+.mq{display:flex;width:max-content;animation:mq 38s linear infinite}
+.mq.rev{animation-direction:reverse;animation-duration:46s}
+.mq-wrap:hover .mq{animation-play-state:paused}
+@keyframes mq{to{transform:translateX(-50%)}}
+.mq span{font-family:Syne,sans-serif;font-weight:700;font-size:clamp(28px,4vw,52px);letter-spacing:-.03em;padding:0 22px;white-space:nowrap}
+.mq i{font-style:normal;color:var(--coral);display:inline-block;animation:spin 6s linear infinite}
+/* scroll reveal (site enables via .js-rv on root) */
+.js-rv .rv{opacity:0;transform:translateY(36px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+.js-rv .rv.on{opacity:1;transform:none}
+.js-rv .mf span{opacity:.18;transition:opacity .4s}
+.js-rv .mf span.lit{opacity:1}
+/* program cards */
+.track{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px clamp(18px,4vw,48px) 28px;scrollbar-width:thin;scrollbar-color:var(--wine) transparent}
+.card{flex:0 0 min(86vw,420px);scroll-snap-align:start;background:var(--ink2);border:1px solid var(--line);border-radius:28px;overflow:hidden;transition:transform .5s cubic-bezier(.2,.7,.2,1),border-color .4s}
+.card:hover{transform:translateY(-8px) rotate(-.6deg);border-color:rgba(242,197,164,.5)}
+.card .img{height:240px;overflow:hidden}
+.card .img img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.04);transition:transform 1.2s cubic-bezier(.2,.7,.2,1);filter:saturate(.9)}
+.card:hover .img img{transform:scale(1.14)}
+.tags span{display:inline-block;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.06em;border:1px solid var(--line);border-radius:999px;padding:5px 10px;margin:0 6px 8px 0;color:var(--muted);transition:all .3s}
+.card:hover .tags span{border-color:rgba(242,197,164,.4);color:var(--cream)}
+/* partner rows */
+.row{position:relative;display:flex;align-items:center;gap:18px;padding:20px 8px;border-top:1px solid var(--line);overflow:hidden;isolation:isolate;transition:color .4s,padding .4s}
+.row::before{content:"";position:absolute;inset:0;background:var(--peach);transform:scaleY(0);transform-origin:bottom;transition:transform .5s cubic-bezier(.7,0,.2,1);z-index:-1}
+.row:hover{color:var(--ink);padding-left:24px}
+.row:hover::before{transform:scaleY(1)}
+.row:hover .mono{color:var(--wine)}
+.row .t{font-family:Syne,sans-serif;font-weight:700;font-size:clamp(20px,2.4vw,30px);letter-spacing:-.03em;flex:1}
+.row .go{opacity:0;transform:translateX(-12px);transition:all .4s}
+.row:hover .go{opacity:1;transform:none}
+/* needs chips */
+.need{display:inline-block;padding:10px 16px;margin:0 8px 10px 0;border-radius:999px;border:1px solid var(--line);font-size:14px;transition:all .35s cubic-bezier(.2,.7,.2,1);cursor:default}
+.need:hover{background:var(--gold);color:var(--ink);border-color:var(--gold);transform:translateY(-4px) rotate(-2deg)}
+/* vision split */
+.vm{position:relative;border-radius:28px;padding:clamp(24px,3vw,40px);border:1px solid var(--line);overflow:hidden;isolation:isolate;transition:border-color .4s}
+.vm::after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:var(--wine);right:-220px;bottom:-260px;z-index:-1;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.vm:hover::after{transform:scale(2.6)}
+.vm:hover{border-color:transparent}
+/* pulse dot */
+.dot{width:8px;height:8px;border-radius:50%;background:var(--coral);display:inline-block;box-shadow:0 0 0 0 rgba(232,131,110,.6);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 12px rgba(232,131,110,0)}100%{box-shadow:0 0 0 0 rgba(232,131,110,0)}}
+/* form */
+.f input,.f select,.f textarea{width:100%;box-sizing:border-box;background:transparent;border:0;border-bottom:1px solid rgba(243,233,226,.3);color:var(--cream);font-family:'Instrument Sans',sans-serif;font-size:15px;padding:12px 2px;border-radius:0;transition:border-color .3s}
+.f select option{color:#140A0C}
+.f input:focus,.f select:focus,.f textarea:focus{outline:none;border-bottom-color:var(--peach)}
+.f label{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:block}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.spot{position:absolute;inset:0;pointer-events:none;background:radial-gradient(520px circle at var(--mx,70%) var(--my,40%),rgba(140,36,51,.38),transparent 60%);transition:background .2s}
+@media (prefers-reduced-motion: reduce){
+.e *,.e *::before,.e *::after{animation:none!important;transition:none!important}
+.curtain{display:none}.in,.word>span{opacity:1;transform:none}
+.js-rv .rv{opacity:1;transform:none}.js-rv .mf span{opacity:1}
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+img{max-width:100%}
+.skip-link{position:absolute!important;left:-9999px!important;top:8px;z-index:100;background:#fff;color:#000!important;padding:12px 18px;font-weight:700;border-radius:6px}
+.skip-link:focus{left:8px!important}
+[hidden]{display:none!important}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+@media (max-width: 640px){
+  header nav{width:100%;gap:6px 18px!important}
+  ul[style*="columns: 2"]{columns:1!important}
+  ol[style*="grid-template-columns: repeat(2"]{grid-template-columns:1fr!important}
+}
+</style>
+</head>
+<body>
+<div class="e" id="e-root">
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- INTRO CURTAIN -->
+<div class="curtain" aria-hidden="true">
+<div style="display: flex; gap: .35em; flex-wrap: wrap; justify-content: center; padding: 0 20px">
+<span style="animation-delay: .1s">Empower.</span><span style="animation-delay: .35s; color: #F2C5A4">Include.</span><span style="animation-delay: .6s; color: #D9A441">Thrive.</span>
+</div>
+</div>
+
+<!-- HERO -->
+<section id="hero" style="position: relative; min-height: min(100vh, 980px); display: flex; flex-direction: column">
+<div class="spot" aria-hidden="true"></div>
+<header class="wrap" style="width: 100%; position: relative; z-index: 3; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-top: 22px; padding-bottom: 22px">
+<a href="./" style="display: flex; align-items: center; gap: 10px; text-decoration: none">
+<span style="background: #F2ECEC; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center"><img src="../assets/logo-mark.png" alt="ALL ARE ABLE logo mark" style="width: 30px; height: auto"></span>
+<span class="syne" style="font-size: 15px; letter-spacing: -.01em; color: #F3E9E2">all are able</span>
+</a>
+<nav class="nav" aria-label="Main" style="display: flex; gap: 28px; flex-wrap: wrap; align-items: center">
+<a href="#manifesto">Why</a><a href="#programmes">Programmes</a><a href="#partner">Partner</a><a href="#contact">Contact</a>
+</nav>
+<div style="display: flex; align-items: center; gap: 10px"><span class="dot" aria-hidden="true"></span><span class="mono muted">Uganda</span></div>
+</header>
+
+<div class="wrap" style="width: 100%; flex: 1; display: flex; flex-wrap: wrap; align-items: center; gap: 40px; position: relative; z-index: 2; padding-bottom: 48px">
+<div style="flex: 1 1 520px; min-width: 0">
+<div class="mono in" style="color: #E8836E; animation-delay: 2.2s">● For children &amp; youth with intellectual disabilities</div>
+<h1 class="syne" style="font-size: clamp(38px,5.2vw,76px); line-height: 1.04; margin: 22px 0 26px; color: #F3E9E2">
+<span class="word"><span style="animation-delay: 2.3s">Ability</span></span> <span class="word"><span style="animation-delay: 2.38s">lives</span></span> <span class="word"><span style="animation-delay: 2.46s">in</span></span><br>
+<span class="cyc" aria-hidden="true"><span><span>painting.</span><span>baking.</span><span>music.</span><span>tailoring.</span><span>farming.</span><span>coding.</span><span>painting.</span></span></span><span style="position: absolute; left: -9999px">every young person.</span>
+</h1>
+<p class="in" style="max-width: 30em; font-size: 15px; color: #BBA8A1; margin: 0 0 30px; animation-delay: 2.6s">ALL ARE ABLE helps children and youth with intellectual disabilities discover their talents and build the skills, confidence and independence to thrive — through vocational training, creative arts and inclusive opportunities.</p>
+<div class="in" style="display: flex; gap: 10px; flex-wrap: wrap; animation-delay: 2.75s">
+<a class="pill pill-p" href="#partner">Partner with us <span class="arr">→</span></a>
+<a class="pill pill-g" href="#programmes">Explore programmes <span class="arr">→</span></a>
+</div>
+</div>
+
+<div style="flex: 1 1 420px; min-width: 0; position: relative; height: clamp(420px,46vw,600px)">
+<svg class="sun" viewBox="0 0 400 400" aria-hidden="true" style="position: absolute; inset: 0; margin: auto; width: 100%; height: 100%; max-width: 600px; color: #F2C5A4; opacity: .5">
+<g stroke="currentColor" stroke-width="1.2" stroke-linecap="round" fill="none">
+<line class="ray" x1="200" y1="60" x2="200" y2="10" style="animation-delay: 1.9s"/><line class="ray" x1="270" y1="79" x2="295" y2="36" style="animation-delay: 1.95s"/><line class="ray" x1="321" y1="130" x2="364" y2="105" style="animation-delay: 2s"/><line class="ray" x1="340" y1="200" x2="390" y2="200" style="animation-delay: 2.05s"/><line class="ray" x1="321" y1="270" x2="364" y2="295" style="animation-delay: 2.1s"/><line class="ray" x1="270" y1="321" x2="295" y2="364" style="animation-delay: 2.15s"/><line class="ray" x1="200" y1="340" x2="200" y2="390" style="animation-delay: 2.2s"/><line class="ray" x1="130" y1="321" x2="105" y2="364" style="animation-delay: 2.25s"/><line class="ray" x1="79" y1="270" x2="36" y2="295" style="animation-delay: 2.3s"/><line class="ray" x1="60" y1="200" x2="10" y2="200" style="animation-delay: 2.35s"/><line class="ray" x1="79" y1="130" x2="36" y2="105" style="animation-delay: 2.4s"/><line class="ray" x1="130" y1="79" x2="105" y2="36" style="animation-delay: 2.45s"/>
+<circle cx="200" cy="200" r="150" stroke-dasharray="2 8" opacity=".6"/>
+</g>
+</svg>
+<div class="float" style="position: absolute; left: 20%; top: 10%; width: 58%; --r: -3deg">
+<img class="blob" src="../assets/painting.jpg" alt="A young boy proudly holds up his colourful painting with two ALL ARE ABLE staff members" style="display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover">
+</div>
+<div class="float2" style="position: absolute; left: 0; bottom: 4%; width: 34%; --r: 4deg">
+<img src="../assets/mentoring.jpg" alt="A staff member works one-to-one with a young man" style="display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 50%; border: 4px solid #140A0C">
+</div>
+<div class="float3" style="position: absolute; right: 0; bottom: 12%; width: 30%; --r: -6deg">
+<img loading="lazy" src="../assets/outdoors.jpg" alt="Children learning outdoors with a staff member" style="display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 20px; border: 4px solid #140A0C">
+</div>
+<div class="float2 mono" style="position: absolute; right: 4%; top: 6%; background: #D9A441; color: #140A0C; padding: 8px 12px; border-radius: 999px; --r: 6deg">talent on show ✦</div>
+</div>
+</div>
+
+<div class="wrap mono muted" style="width: 100%; display: flex; justify-content: space-between; padding-bottom: 22px; position: relative; z-index: 2"><span>Scroll</span><span>01 / 07</span></div>
+</section>
+
+<main id="main">
+
+<!-- MARQUEE -->
+<div class="mq-wrap" aria-hidden="true" style="border-top: 1px solid rgba(243,233,226,.12); border-bottom: 1px solid rgba(243,233,226,.12); padding: 18px 0; overflow: hidden">
+<div class="mq"><span>Tailoring</span><span><i>✦</i></span><span>Baking &amp; catering</span><span><i>✦</i></span><span>Art &amp; painting</span><span><i>✦</i></span><span>Music &amp; dance</span><span><i>✦</i></span><span>Hairdressing</span><span><i>✦</i></span><span>Farming</span><span><i>✦</i></span><span>Tailoring</span><span><i>✦</i></span><span>Baking &amp; catering</span><span><i>✦</i></span><span>Art &amp; painting</span><span><i>✦</i></span><span>Music &amp; dance</span><span><i>✦</i></span><span>Hairdressing</span><span><i>✦</i></span><span>Farming</span><span><i>✦</i></span></div>
+<div class="mq rev" style="margin-top: 6px; color: #F2C5A4"><span>Photography</span><span><i>✦</i></span><span>Digital skills</span><span><i>✦</i></span><span>Drama</span><span><i>✦</i></span><span>Entrepreneurship</span><span><i>✦</i></span><span>Sports</span><span><i>✦</i></span><span>Inclusive STEM</span><span><i>✦</i></span><span>Photography</span><span><i>✦</i></span><span>Digital skills</span><span><i>✦</i></span><span>Drama</span><span><i>✦</i></span><span>Entrepreneurship</span><span><i>✦</i></span><span>Sports</span><span><i>✦</i></span><span>Inclusive STEM</span><span><i>✦</i></span></div>
+</div>
+
+<!-- MANIFESTO -->
+<section id="manifesto" style="padding: clamp(80px,11vw,160px) 0">
+<div class="wrap" style="display: flex; flex-wrap: wrap; gap: 32px 64px">
+<div class="mono rv" style="flex: 0 0 200px; color: #E8836E">02 — The problem</div>
+<div style="flex: 1 1 560px; min-width: 0">
+<p class="syne mf" style="font-size: clamp(24px,3.2vw,44px); line-height: 1.18; font-weight: 700; margin: 0 0 40px"><span>In</span> <span>Uganda,</span> <span>many</span> <span>children</span> <span>with</span> <span>intellectual</span> <span>disabilities</span> <span>are</span> <span>misunderstood,</span> <span>underestimated</span> <span>and</span> <span>left</span> <span>out.</span> <span style="color: #F2C5A4">Communities</span> <span style="color: #F2C5A4">see</span> <span style="color: #F2C5A4">disability.</span> <span style="color: #D9A441">We</span> <span style="color: #D9A441">see</span> <span style="color: #D9A441">ability.</span></p>
+<div class="rv" style="display: flex; flex-wrap: wrap; gap: 24px 48px; color: #BBA8A1">
+<p style="flex: 1 1 280px; margin: 0">Stigma, discrimination and low awareness keep many young people from quality education, skills training and work — leaving them isolated and dependent on others.</p>
+<p style="flex: 1 1 280px; margin: 0">Families worry about the future and struggle to find inclusive spaces. ALL ARE ABLE builds those spaces, and works to change how society sees ability.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- PROGRAMMES -->
+<section id="programmes" style="padding: 0 0 clamp(80px,10vw,140px)">
+<div class="wrap" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 20px; margin-bottom: 36px">
+<div class="rv">
+<div class="mono" style="color: #E8836E">03 — Programmes</div>
+<h2 class="syne" style="font-size: clamp(34px,4.6vw,64px); line-height: 1; margin: 16px 0 0">Three paths.<br><span style="color: #F2C5A4">Endless talent.</span></h2>
+</div>
+<p class="mono muted rv">Drag / scroll →</p>
+</div>
+<div class="track" role="list">
+<article class="card" role="listitem">
+<div class="img"><img loading="lazy" src="../assets/mentoring.jpg" alt="One-to-one skills training with a staff member"></div>
+<div style="padding: 24px 24px 20px">
+<div class="mono" style="color: #D9A441">P/01</div>
+<h3 class="syne" style="font-size: 24px; line-height: 1.1; margin: 10px 0 10px">Skills &amp; vocational training</h3>
+<p class="muted" style="margin: 0 0 16px">Tailored training for independence, enterprise and a livelihood.</p>
+<div class="tags"><span>Tailoring</span><span>Hairdressing</span><span>Baking</span><span>Handcrafts</span><span>Computers</span><span>Farming</span><span>Entrepreneurship</span><span>Social skills</span><span>STEM</span></div>
+</div>
+</article>
+<article class="card" role="listitem">
+<div class="img"><img loading="lazy" src="../assets/painting.jpg" alt="A young artist shows his painting"></div>
+<div style="padding: 24px 24px 20px">
+<div class="mono" style="color: #D9A441">P/02</div>
+<h3 class="syne" style="font-size: 24px; line-height: 1.1; margin: 10px 0 10px">Creative arts &amp; talent</h3>
+<p class="muted" style="margin: 0 0 16px">Creativity that builds confidence, expression and pride.</p>
+<div class="tags"><span>Painting</span><span>Music</span><span>Dance</span><span>Drama</span><span>Photography</span><span>Media</span><span>Exhibitions</span><span>Sports</span></div>
+</div>
+</article>
+<article class="card" role="listitem">
+<div class="img"><img loading="lazy" src="../assets/outdoors.jpg" alt="Children and a staff member together outdoors"></div>
+<div style="padding: 24px 24px 20px">
+<div class="mono" style="color: #D9A441">P/03</div>
+<h3 class="syne" style="font-size: 24px; line-height: 1.1; margin: 10px 0 10px">Inclusion &amp; advocacy</h3>
+<p class="muted" style="margin: 0 0 16px">Breaking stigma with communities, schools and employers.</p>
+<div class="tags"><span>Inclusive jobs</span><span>Internships</span><span>Apprenticeships</span><span>Outreach</span><span>Rights info</span><span>Campaigns</span><span>Camps &amp; trips</span></div>
+</div>
+</article>
+<article class="card" role="listitem" style="background: #8C2433; border-color: transparent; display: flex; flex-direction: column; justify-content: space-between; padding: 28px">
+<div class="mono" style="color: #F2C5A4">Our goal</div>
+<p class="syne" style="font-size: 28px; line-height: 1.12; margin: 0">Training centres across Uganda — so every child gets the chance to succeed.</p>
+<a class="pill pill-p" href="#partner" style="align-self: flex-start">Help us build <span class="arr">→</span></a>
+</article>
+</div>
+</section>
+
+<!-- VISION / MISSION -->
+<section style="padding: 0 0 clamp(80px,10vw,140px)">
+<div class="wrap" style="display: flex; flex-wrap: wrap; gap: 18px">
+<div class="vm rv" style="flex: 1 1 420px">
+<div class="mono" style="color: #F2C5A4">04 — Vision</div>
+<p class="syne" style="font-size: clamp(20px,2vw,26px); line-height: 1.3; font-weight: 700; letter-spacing: -.02em; margin: 18px 0 0">A world where every child and youth, regardless of ability, is seen, valued, empowered and given equal opportunities to thrive.</p>
+</div>
+<div class="vm rv" style="flex: 1 1 420px">
+<div class="mono" style="color: #F2C5A4">05 — Mission</div>
+<p class="syne" style="font-size: clamp(20px,2vw,26px); line-height: 1.3; font-weight: 700; letter-spacing: -.02em; margin: 18px 0 0">To empower children and youth with intellectual disabilities through skills, talent development, creative arts and inclusive opportunities that unlock their full potential.</p>
+</div>
+</div>
+</section>
+
+<!-- TEAM -->
+<section style="padding: 0 0 clamp(80px,10vw,140px)">
+<div class="wrap" style="display: flex; flex-wrap: wrap; gap: 32px 56px; align-items: center">
+<div class="rv" style="flex: 1 1 560px; min-width: 0; border-radius: 28px; overflow: hidden; position: relative">
+<img loading="lazy" src="../assets/team.jpg" alt="Four ALL ARE ABLE team members in maroon caps and white logo polo shirts" style="display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover">
+<span class="mono" style="position: absolute; left: 16px; bottom: 16px; background: #140A0C; padding: 8px 12px; border-radius: 999px">The team ✦ [names — CLIENT TO CONFIRM]</span>
+</div>
+<div class="rv" style="flex: 1 1 320px; min-width: 0">
+<div class="mono" style="color: #E8836E">06 — Who we are</div>
+<h2 class="syne" style="font-size: clamp(28px,3.2vw,44px); line-height: 1.05; margin: 16px 0 16px">A purpose-driven team that believes every child is able.</h2>
+<p class="muted" style="margin: 0 0 22px">We nurture talent, teach skills and challenge stigma — alongside young people, their families and communities.</p>
+<div style="display: flex; gap: 10px; flex-wrap: wrap"><span class="ph">[00] young people</span><span class="ph">[00] families</span><span class="ph">since [YEAR]</span></div>
+</div>
+</div>
+</section>
+
+<!-- PARTNER -->
+<section id="partner" style="padding: clamp(80px,10vw,140px) 0; background: #1F1114; border-top: 1px solid rgba(243,233,226,.12)">
+<div class="wrap" style="display: flex; flex-wrap: wrap; gap: 48px 72px">
+<div class="rv" style="flex: 1 1 340px">
+<div class="mono" style="color: #E8836E">07 — Partner</div>
+<h2 class="syne" style="font-size: clamp(34px,4.4vw,60px); line-height: 1; margin: 16px 0 20px">Impact that’s meaningful, measurable &amp; sustainable.</h2>
+<p class="muted" style="margin: 0 0 28px; max-width: 30em">Partner with ALL ARE ABLE and help us reach more young people. Here’s what we need:</p>
+<div>
+<span class="need">Funding &amp; grants</span><span class="need">Infrastructure</span><span class="need">Learning materials</span><span class="need">Assistive equipment</span><span class="need">Scholarships</span><span class="need">Vocational tools</span><span class="need">Transport &amp; outreach</span><span class="need">Corporate sponsorship</span><span class="need">Strategic partnerships</span><span class="need">Volunteers</span>
+</div>
+</div>
+<div style="flex: 1 1 480px; min-width: 0">
+<div class="row rv"><span class="mono muted">01</span><span class="t">Empowering young people with disabilities</span><span class="go" aria-hidden="true">↗</span></div>
+<div class="row rv"><span class="mono muted">02</span><span class="t">Creating economic opportunities</span><span class="go" aria-hidden="true">↗</span></div>
+<div class="row rv"><span class="mono muted">03</span><span class="t">Expanding inclusive education</span><span class="go" aria-hidden="true">↗</span></div>
+<div class="row rv"><span class="mono muted">04</span><span class="t">Restoring hope</span><span class="go" aria-hidden="true">↗</span></div>
+<div class="row rv"><span class="mono muted">05</span><span class="t">Improving learning environments</span><span class="go" aria-hidden="true">↗</span></div>
+<div class="row rv" style="border-bottom: 1px solid rgba(243,233,226,.12)"><span class="mono muted">06</span><span class="t">Building inclusive communities</span><span class="go" aria-hidden="true">↗</span></div>
+</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="padding: clamp(80px,11vw,160px) 0 clamp(60px,8vw,100px); position: relative">
+<div class="wrap">
+<h2 class="syne rv" style="font-size: clamp(52px,10vw,160px); line-height: .9; margin: 0 0 48px; letter-spacing: -.05em">Let’s make<br><span style="color: #F2C5A4">ability</span> visible.</h2>
+<div style="display: flex; flex-wrap: wrap; gap: 40px 72px">
+<div class="rv" style="flex: 1 1 300px">
+<a class="pill pill-p" href="https://wa.me/256000000000" style="margin-bottom: 26px">WhatsApp us <span class="arr">→</span></a>
+<div style="display: grid; gap: 10px">
+<span class="ph">Phone: [CLIENT TO CONFIRM]</span>
+<span class="ph">Email: [CLIENT TO CONFIRM]</span>
+<span class="ph">Address: [Uganda — CLIENT TO CONFIRM]</span>
+<span class="ph">Mobile Money / Bank: [CLIENT TO CONFIRM]</span>
+</div>
+<p style="margin: 22px 0 0"><a class="pill pill-g" href="../assets/all-are-able-profile.pdf" download>Download profile (PDF) <span class="arr">↓</span></a></p>
+</div>
+<form class="f rv" action="https://formspree.io/f/XXXX" method="post" style="flex: 1 1 460px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px 24px">
+<div><label for="e-name">Name</label><input id="e-name" name="name" type="text" autocomplete="name"></div>
+<div><label for="e-contact">Phone / email</label><input id="e-contact" name="contact" type="text"></div>
+<div style="grid-column: 1 / -1"><label for="e-who">I am a</label><select id="e-who" name="who"><option>Parent or caregiver</option><option>Funder or partner</option><option>Volunteer</option><option>School or employer</option><option>Other</option></select></div>
+<div style="grid-column: 1 / -1"><label for="e-msg">Message</label><textarea id="e-msg" name="message" rows="3"></textarea></div>
+<div><button type="submit" class="pill pill-p" style="border: 0; cursor: pointer">Send <span class="arr">→</span></button></div>
+</form>
+</div>
+</div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer style="border-top: 1px solid rgba(243,233,226,.12); overflow: hidden">
+<div class="mq-wrap" aria-hidden="true" style="padding: 26px 0; overflow: hidden">
+<div class="mq" style="animation-duration: 30s"><span style="font-size: clamp(40px,7vw,96px); color: #8C2433">Empower</span><span><i>✦</i></span><span style="font-size: clamp(40px,7vw,96px)">Include</span><span><i>✦</i></span><span style="font-size: clamp(40px,7vw,96px); color: #F2C5A4">Thrive</span><span><i>✦</i></span><span style="font-size: clamp(40px,7vw,96px); color: #8C2433">Empower</span><span><i>✦</i></span><span style="font-size: clamp(40px,7vw,96px)">Include</span><span><i>✦</i></span><span style="font-size: clamp(40px,7vw,96px); color: #F2C5A4">Thrive</span><span><i>✦</i></span></div>
+</div>
+<div class="wrap mono muted" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-top: 20px; padding-bottom: 28px">
+<span>© 2026 All Are Able · Uganda</span><span>Registered as [CLIENT TO CONFIRM]</span><span>[Facebook] · [Instagram] · [LinkedIn]</span><a href="#hero" style="color: #F2C5A4">Back to top ↑</a>
+</div>
+</footer>
+
+</div>
+<script>
+(function(){
+  var root=document.getElementById('e-root');
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!('IntersectionObserver' in window)||reduce)return;
+  root.classList.add('js-rv');
+  // reveal on scroll, staggered within each parent
+  var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){var el=en.target;
+    var sib=[].slice.call(el.parentNode.querySelectorAll(':scope > .rv'));var i=Math.max(0,sib.indexOf(el));
+    el.style.transitionDelay=(i*90)+'ms';el.classList.add('on');io.unobserve(el);}});},{threshold:.15,rootMargin:'0px 0px -40px 0px'});
+  [].forEach.call(root.querySelectorAll('.rv'),function(el){io.observe(el)});
+  // manifesto: light words as you scroll
+  var words=[].slice.call(root.querySelectorAll('.mf span'));var mf=root.querySelector('.mf');
+  function lite(){if(!mf)return;var r=mf.getBoundingClientRect(),vh=window.innerHeight;
+    var p=Math.min(1,Math.max(0,(vh*0.85-r.top)/(r.height+vh*0.35)));var n=Math.round(p*words.length);
+    words.forEach(function(w,i){w.classList.toggle('lit',i<n)});}
+  // spotlight follows cursor in hero
+  var hero=document.getElementById('hero');
+  hero.addEventListener('pointermove',function(e){var r=hero.getBoundingClientRect();
+    hero.style.setProperty('--mx',(e.clientX-r.left)+'px');hero.style.setProperty('--my',(e.clientY-r.top)+'px');});
+  // magnetic buttons
+  [].forEach.call(root.querySelectorAll('.pill'),function(b){
+    b.addEventListener('pointermove',function(e){if(e.pointerType!=='mouse')return;var r=b.getBoundingClientRect();
+      b.style.transform='translate('+((e.clientX-r.left-r.width/2)*.18)+'px,'+((e.clientY-r.top-r.height/2)*.3)+'px)';});
+    b.addEventListener('pointerleave',function(){b.style.transform='';});
+    b.style.transition='transform .35s cubic-bezier(.2,.7,.2,1), color .35s ease';
+  });
+  // parallax on hero photos
+  var floats=[].slice.call(root.querySelectorAll('#hero .float, #hero .float2, #hero .float3'));
+  function par(){if(window.innerWidth<900){floats.forEach(function(f){f.style.translate=''});return;}var y=Math.min(window.scrollY,1200);floats.forEach(function(f,i){f.style.translate='0 '+(-y*(0.06+i*0.04))+'px'});}
+  // drag to scroll programme track
+  var t=root.querySelector('.track'),down=false,sx=0,sl=0;
+  if(t){t.addEventListener('pointerdown',function(e){if(e.pointerType!=='mouse')return;down=true;sx=e.clientX;sl=t.scrollLeft;t.style.cursor='grabbing';t.style.scrollSnapType='none';});
+    window.addEventListener('pointerup',function(){if(!down)return;down=false;t.style.cursor='';t.style.scrollSnapType='';});
+    t.addEventListener('pointermove',function(e){if(down){t.scrollLeft=sl-(e.clientX-sx);}});t.style.cursor='grab';}
+  var tick=false;window.addEventListener('scroll',function(){if(tick)return;tick=true;requestAnimationFrame(function(){lite();par();tick=false;});},{passive:true});
+  lite();
+})();
+</script>
+
+</body>
+</html>
