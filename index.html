@@ -4,88 +4,276 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ALL ARE ABLE — Website design options</title>
-<meta name="description" content="Four website design directions for ALL ARE ABLE, a Ugandan organisation empowering children and youth with intellectual disabilities.">
+<meta name="description" content="Five website design directions for ALL ARE ABLE, a Ugandan organisation empowering children and youth with intellectual disabilities.">
 <meta name="robots" content="noindex">
+<meta name="theme-color" content="#F7F2EE">
 <meta property="og:title" content="ALL ARE ABLE — Website design options">
+<meta property="og:description" content="Five design directions for the new ALL ARE ABLE website. Pick your favourite.">
 <meta property="og:image" content="assets/painting.jpg">
 <link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Gloock&amp;family=Bricolage+Grotesque:opsz,wght@12..96,800&amp;family=Big+Shoulders+Display:wght@900&amp;family=Lexend:wght@300;400;600&amp;family=Syne:wght@800&amp;family=DM+Mono&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Gloock&amp;family=Bricolage+Grotesque:opsz,wght@12..96,800&amp;family=Big+Shoulders+Display:wght@900&amp;family=Lexend:wght@300;400;600&amp;family=Syne:wght@700;800&amp;family=DM+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box}
-body{margin:0;background:#F7F2EE;color:#2B1D1B;font-family:Lexend,system-ui,sans-serif;font-weight:300}
-a:focus-visible{outline:3px solid #C8963E;outline-offset:3px}
-.wrap{max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,48px)}
-header{padding:48px 0 32px;display:flex;gap:20px;align-items:center;flex-wrap:wrap}
-header img{width:96px;height:auto}
-h1{font-weight:600;font-size:clamp(30px,4vw,48px);letter-spacing:-.02em;margin:0 0 8px;color:#5C1919}
-.lead{font-size:18px;line-height:1.6;margin:0;max-width:40em}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,520px),1fr));gap:20px;padding:24px 0 64px}
-.card{display:flex;flex-direction:column;justify-content:space-between;gap:28px;min-height:340px;padding:clamp(24px,4vw,40px);border-radius:24px;text-decoration:none;transition:transform .2s}
-.card:hover{transform:translateY(-3px)}
-.k{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;opacity:.85}
-.name{margin:12px 0 10px;line-height:1}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{margin:0;background:#F7F2EE;color:#2B1D1B;font-family:Lexend,system-ui,sans-serif;font-weight:300;overflow-x:hidden}
+a:focus-visible{outline:3px solid #C8963E;outline-offset:4px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 clamp(16px,4vw,48px)}
+.mono{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;min-height:min(92vh,860px);display:flex;flex-direction:column;justify-content:center;padding:96px 0 72px;overflow:hidden}
+.topbar{position:absolute;top:0;left:0;right:0;padding:22px 0}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px}
+.topbar .mono{color:#8A4B3C}
+.live{display:inline-flex;align-items:center;gap:8px}
+.live i{width:8px;height:8px;border-radius:50%;background:#E8836E;animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(232,131,110,.55)}70%{box-shadow:0 0 0 12px rgba(232,131,110,0)}100%{box-shadow:0 0 0 0 rgba(232,131,110,0)}}
+.hero-grid{display:flex;flex-wrap:wrap;align-items:center;gap:40px 64px}
+.hero-copy{flex:1 1 560px;min-width:0}
+.eyebrow{color:#A0604E;opacity:0;animation:up .8s cubic-bezier(.2,.7,.2,1) .2s forwards}
+h1{font-family:Syne,sans-serif;font-weight:800;letter-spacing:-.045em;line-height:.98;font-size:clamp(46px,7.4vw,108px);color:#5C1919;margin:22px 0 26px}
+h1 .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
+h1 .w>span{display:inline-block;transform:translateY(110%);animation:wordUp 1s cubic-bezier(.2,.8,.2,1) forwards}
+h1 em{font-style:normal;color:#C27358}
+@keyframes wordUp{to{transform:none}}
+@keyframes up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.lead{font-size:18px;line-height:1.65;max-width:34em;margin:0 0 34px;opacity:0;animation:up .9s cubic-bezier(.2,.7,.2,1) 1s forwards}
+.cta{display:flex;flex-wrap:wrap;gap:12px;opacity:0;animation:up .9s cubic-bezier(.2,.7,.2,1) 1.15s forwards}
+.btn{position:relative;display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font-family:'DM Mono',monospace;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;overflow:hidden;isolation:isolate;transition:color .35s}
+.btn::before{content:"";position:absolute;inset:0;border-radius:inherit;transform:translateY(101%);transition:transform .45s cubic-bezier(.7,0,.2,1);z-index:-1}
+.btn:hover::before{transform:none}
+.btn-p{background:#5C1919;color:#FBF6F1}.btn-p::before{background:#8C2433}
+.btn-g{border:1px solid rgba(92,25,25,.35);color:#5C1919}.btn-g::before{background:#5C1919}.btn-g:hover{color:#FBF6F1}
+.btn .arr{transition:transform .35s}.btn:hover .arr{transform:translateY(3px)}
+
+/* logo medallion */
+.medal{flex:0 1 420px;min-width:260px;aspect-ratio:1/1;position:relative;margin:0 auto;opacity:0;animation:pop 1.2s cubic-bezier(.2,.8,.2,1) .4s forwards}
+@keyframes pop{from{opacity:0;transform:scale(.86) rotate(-6deg)}to{opacity:1;transform:none}}
+.medal svg.rays{position:absolute;inset:0;width:100%;height:100%;color:#CA947A;animation:spin 70s linear infinite}
+.medal svg.rays line{stroke-dasharray:60;stroke-dashoffset:60;animation:draw 1.2s ease forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes spin{to{transform:rotate(360deg)}}
+.medal .ring2{position:absolute;inset:12%;border-radius:50%;border:1px dashed rgba(92,25,25,.3);animation:spin 40s linear infinite reverse}
+.medal .disc{position:absolute;inset:20%;border-radius:50%;background:#F2ECEC;box-shadow:0 30px 60px -30px rgba(92,25,25,.45),inset 0 0 0 1px rgba(92,25,25,.08);display:flex;align-items:center;justify-content:center;animation:float 7s ease-in-out infinite}
+.medal .disc img{width:78%;height:auto}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.chip{position:absolute;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:8px 13px;border-radius:999px;white-space:nowrap;animation:float 6s ease-in-out infinite}
+.chip.c1{top:8%;right:2%;background:#D9A441;color:#2A0E0B;transform:rotate(6deg);animation-delay:-2s}
+.chip.c2{bottom:12%;left:-2%;background:#5C1919;color:#FBF6F1;animation-delay:-4s}
+.chip.c3{bottom:2%;right:12%;background:#F2C5A4;color:#5C1919}
+
+.scroll-hint{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:#8A4B3C;text-decoration:none}
+.scroll-hint span.line{width:1px;height:38px;background:linear-gradient(#8A4B3C,transparent);animation:drip 1.8s ease-in-out infinite;transform-origin:top}
+@keyframes drip{0%{transform:scaleY(0);opacity:1}60%{transform:scaleY(1);opacity:1}100%{transform:scaleY(1);opacity:0}}
+
+/* ---------- MARQUEE ---------- */
+.mq-outer{overflow:hidden;padding:14px 0}
+.mq-wrap{background:#5C1919;color:#FBF6F1;overflow:hidden;padding:18px 0;transform:rotate(-1.2deg);margin:0 -20px;position:relative;z-index:2}
+.mq{display:flex;width:max-content;animation:mq 34s linear infinite}
+.mq span{font-family:Syne,sans-serif;font-weight:800;font-size:clamp(24px,3.2vw,40px);letter-spacing:-.03em;padding:0 22px;white-space:nowrap}
+.mq i{font-style:normal;color:#F2C5A4;display:inline-block;animation:spin 6s linear infinite}
+.mq b{font-weight:800;color:#D9A441}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* ---------- CARDS ---------- */
+.section-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px;padding:96px 0 28px}
+.section-head h2{font-family:Syne,sans-serif;font-weight:800;letter-spacing:-.04em;font-size:clamp(30px,4vw,52px);line-height:1;margin:10px 0 0;color:#5C1919}
+.section-head p{margin:0;max-width:26em;color:#6B514B}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,520px),1fr));gap:20px;padding:12px 0 96px;perspective:1400px}
+.card{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:28px;min-height:360px;padding:clamp(24px,4vw,40px);border-radius:28px;text-decoration:none;overflow:hidden;isolation:isolate;transform-style:preserve-3d;transition:transform .6s cubic-bezier(.2,.7,.2,1),box-shadow .6s}
+.card:hover{box-shadow:0 40px 80px -40px rgba(43,29,27,.55)}
+.card .num{position:absolute;right:clamp(20px,3vw,36px);bottom:-.18em;font-family:Syne,sans-serif;font-weight:800;font-size:clamp(120px,16vw,220px);line-height:1;letter-spacing:-.06em;color:transparent;-webkit-text-stroke:1.5px currentColor;opacity:.22;z-index:-1;transition:transform .8s cubic-bezier(.2,.7,.2,1),opacity .6s}
+.card:hover .num{transform:translateY(-14px);opacity:.4}
+.card:not(.e) .name{padding-right:clamp(70px,9vw,120px)}
+.card:not(.e) .k{padding-right:clamp(70px,9vw,120px)}
+.k{font-family:'DM Mono',monospace;font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;opacity:.9}
+.name{margin:14px 0 12px;line-height:1;max-width:11em}
 .desc{font-size:16px;line-height:1.55;margin:0;max-width:30em}
 .foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
-.sw{display:flex;gap:6px}.sw span{width:26px;height:26px;border-radius:50%;border:1px solid rgba(0,0,0,.12)}
-.go{font-weight:600;font-size:16px}
-.a{background:#F7F1EC;color:#5C1919;border:1px solid rgba(92,25,25,.18)}
+.sw{display:flex}
+.sw span{width:28px;height:28px;border-radius:50%;border:2px solid currentColor;margin-left:-6px;transition:transform .45s cubic-bezier(.2,.8,.2,1),margin .45s cubic-bezier(.2,.8,.2,1)}
+.sw span:first-child{margin-left:0}
+.card:hover .sw span{margin-left:6px}
+.card:hover .sw span:nth-child(odd){transform:translateY(-4px)}
+.go{font-family:'DM Mono',monospace;font-size:12.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px}
+.go .circ{width:44px;height:44px;border-radius:50%;border:1px solid currentColor;display:inline-flex;align-items:center;justify-content:center;transition:transform .5s cubic-bezier(.2,.8,.2,1),background .4s,color .4s}
+.card:hover .go .circ{transform:rotate(-45deg)}
+.thumb{position:absolute;top:clamp(20px,3vw,32px);right:clamp(20px,3vw,32px);width:clamp(76px,9vw,112px);aspect-ratio:1/1;border-radius:50%;overflow:hidden;transform:scale(.9) rotate(-8deg);transition:transform .7s cubic-bezier(.2,.8,.2,1),border-radius .7s;box-shadow:0 18px 30px -18px rgba(0,0,0,.6)}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.15);transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
+.card:hover .thumb{transform:scale(1.08) rotate(4deg);border-radius:38% 62% 55% 45% / 50% 40% 60% 50%}
+.card:hover .thumb img{transform:scale(1)}
+
+.a{background:#FBF7F3;color:#5C1919;border:1px solid rgba(92,25,25,.15)}
 .a .name{font-family:Gloock,Georgia,serif;font-size:clamp(40px,5vw,60px)}
+.a .go .circ{background:#5C1919;color:#FBF6F1;border-color:#5C1919}
 .b{background:#F2C5A4;color:#5C1919}
 .b .name{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(40px,5vw,60px);letter-spacing:-.03em}
+.b .go .circ{background:#5C1919;color:#F2C5A4;border-color:#5C1919}
 .c{background:#1E1412;color:#F5EDE3}.c .k,.c .go{color:#E3A43A}
 .c .name{font-family:'Big Shoulders Display',Impact,sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(48px,6vw,76px)}
+.c .go .circ{background:#E3A43A;color:#1E1412;border-color:#E3A43A}
 .d{background:#E4EBDF;color:#2D2326}.d .go{color:#7A2E3A}
 .d .name{font-family:Lexend,sans-serif;font-weight:600;font-size:clamp(36px,4.4vw,54px);letter-spacing:-.02em;color:#7A2E3A}
-.e{grid-column:1/-1;background:#140A0C;color:#F3E9E2;position:relative;overflow:hidden}.e .k{font-family:'DM Mono',monospace;color:#E8836E}.e .go{color:#F2C5A4}
-.e .name{font-family:Syne,sans-serif;font-weight:800;letter-spacing:-.04em;font-size:clamp(40px,6vw,84px)}
+.d .go .circ{background:#7A2E3A;color:#fff;border-color:#7A2E3A}
+.e{grid-column:1/-1;background:#140A0C;color:#F3E9E2;min-height:440px}
+.e .k{color:#E8836E}.e .go{color:#F2C5A4}
+.e .name{font-family:Syne,sans-serif;font-weight:800;letter-spacing:-.045em;font-size:clamp(42px,6.6vw,96px);max-width:9em}
 .e .name span{color:#F2C5A4}
-.e .ring{position:absolute;right:-60px;top:-60px;width:320px;height:320px;border:1px dashed rgba(242,197,164,.4);border-radius:50%;animation:sp 40s linear infinite}
-@keyframes sp{to{transform:rotate(360deg)}}
-footer{border-top:1px solid rgba(92,25,25,.15);padding:24px 0 40px;font-size:14px;color:#6B514B}
-@media (prefers-reduced-motion: reduce){.card{transition:none}}
+.e .go .circ{background:#F2C5A4;color:#140A0C;border-color:#F2C5A4}
+.e .ring{position:absolute;right:-90px;top:-90px;width:380px;height:380px;border:1px dashed rgba(242,197,164,.35);border-radius:50%;animation:spin 40s linear infinite;z-index:-1}
+.e .glow{position:absolute;inset:0;z-index:-1;background:radial-gradient(520px circle at var(--mx,80%) var(--my,20%),rgba(140,36,51,.5),transparent 60%);transition:background .2s}
+.e .thumb{width:clamp(110px,14vw,190px)}
+.badge{display:inline-flex;align-items:center;gap:8px;margin-left:10px;padding:4px 10px;border-radius:999px;background:#E8836E;color:#140A0C;font-size:10.5px;letter-spacing:.14em}
+.badge i{width:6px;height:6px;border-radius:50%;background:#140A0C;animation:blink 1.4s infinite}
+@keyframes blink{50%{opacity:.2}}
+
+/* reveal */
+.js .rv{opacity:0;transform:translateY(60px) rotateX(8deg);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+.js .rv.on{opacity:1;transform:none}
+
+/* ---------- HOW TO REVIEW ---------- */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:0;border-top:1px solid rgba(92,25,25,.2);margin-bottom:80px}
+.step{padding:28px 24px 28px 0;border-bottom:1px solid rgba(92,25,25,.2);position:relative}
+.step .n{font-family:Syne,sans-serif;font-weight:800;font-size:44px;letter-spacing:-.04em;color:#CA947A;line-height:1}
+.step h3{font-family:Syne,sans-serif;font-weight:700;font-size:20px;letter-spacing:-.02em;margin:12px 0 8px;color:#5C1919}
+.step p{margin:0;font-size:15px;line-height:1.6;color:#6B514B;max-width:22em}
+footer{border-top:1px solid rgba(92,25,25,.15);padding:24px 0 40px;font-size:14px;color:#6B514B;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+
+@media (max-width:760px){
+.hero{min-height:0;padding:84px 0 64px}
+h1 br{display:none}
+.card:not(.e) .name{padding-right:0}
+.medal{order:-1;flex-basis:240px;min-width:0;width:240px;max-width:62vw}
+.chip{font-size:9.5px;padding:6px 10px}
+.lead{font-size:16px}
+.cta .btn{flex:1 1 auto;justify-content:center}
+.scroll-hint{display:none}
+.section-head{padding-top:72px}
+.card{min-height:0;padding-top:120px}
+.e{padding-top:150px}
+.thumb{width:84px}.e .thumb{width:110px}
+.go .circ{width:40px;height:40px}
+}
+@media (prefers-reduced-motion: reduce){
+*,*::before,*::after{animation:none!important;transition:none!important}
+.eyebrow,.lead,.cta,.medal{opacity:1}h1 .w>span{transform:none}
+.js .rv{opacity:1;transform:none}
+}
 </style>
 </head>
 <body>
-<main class="wrap">
-<header>
-<img src="assets/logo.png" alt="ALL ARE ABLE — Empower. Include. Thrive.">
-<div>
-<h1>Website design options</h1>
-<p class="lead">Five directions for the ALL ARE ABLE website. Each uses the same content and brand colours, with a different look and feel. Open each one on your phone and computer, then tell us which you prefer.</p>
+
+<section class="hero" id="top">
+<div class="topbar"><div class="wrap"><span class="mono live"><i aria-hidden="true"></i>Design preview</span><span class="mono">All Are Able · Uganda</span></div></div>
+<div class="wrap hero-grid">
+<div class="hero-copy">
+<div class="mono eyebrow">Website design options · 2026</div>
+<h1 aria-label="Five ways to tell one story.">
+<span class="w"><span style="animation-delay:.35s">Five</span></span> <span class="w"><span style="animation-delay:.45s">ways</span></span> <span class="w"><span style="animation-delay:.55s">to</span></span><br>
+<span class="w"><span style="animation-delay:.65s">tell</span></span> <span class="w"><span style="animation-delay:.75s"><em>one</em></span></span> <span class="w"><span style="animation-delay:.85s"><em>story.</em></span></span>
+</h1>
+<p class="lead">Every design below carries the same message: <strong style="font-weight:600;color:#5C1919">every child is able.</strong> Each one tells it with a different voice, colour and feel. Open them on your phone and on a computer, then tell us which one feels most like ALL ARE ABLE.</p>
+<div class="cta">
+<a class="btn btn-p" href="#designs">See the designs <span class="arr">↓</span></a>
+<a class="btn btn-g" href="assets/all-are-able-profile.pdf" download>Organisational profile <span class="arr">↓</span></a>
 </div>
-</header>
+</div>
+
+<div class="medal" aria-hidden="true">
+<svg class="rays" viewBox="0 0 400 400"><g stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+<line x1="200" y1="34" x2="200" y2="4" style="animation-delay:.9s"/><line x1="283" y1="56" x2="298" y2="30" style="animation-delay:.95s"/><line x1="344" y1="117" x2="370" y2="102" style="animation-delay:1s"/><line x1="366" y1="200" x2="396" y2="200" style="animation-delay:1.05s"/><line x1="344" y1="283" x2="370" y2="298" style="animation-delay:1.1s"/><line x1="283" y1="344" x2="298" y2="370" style="animation-delay:1.15s"/><line x1="200" y1="366" x2="200" y2="396" style="animation-delay:1.2s"/><line x1="117" y1="344" x2="102" y2="370" style="animation-delay:1.25s"/><line x1="56" y1="283" x2="30" y2="298" style="animation-delay:1.3s"/><line x1="34" y1="200" x2="4" y2="200" style="animation-delay:1.35s"/><line x1="56" y1="117" x2="30" y2="102" style="animation-delay:1.4s"/><line x1="117" y1="56" x2="102" y2="30" style="animation-delay:1.45s"/>
+</g></svg>
+<div class="ring2"></div>
+<div class="disc"><img src="assets/logo.png" alt=""></div>
+<span class="chip c1">Empower ✦</span>
+<span class="chip c2">Include ✦</span>
+<span class="chip c3">Thrive ✦</span>
+</div>
+</div>
+<a class="scroll-hint mono" href="#designs" aria-label="Scroll to designs"><span>Scroll</span><span class="line"></span></a>
+</section>
+
+<div class="mq-outer"><div class="mq-wrap" aria-hidden="true">
+<div class="mq"><span>Empower</span><span><i>✦</i></span><span>Include</span><span><i>✦</i></span><span><b>Thrive</b></span><span><i>✦</i></span><span>Every child is able</span><span><i>✦</i></span><span>Empower</span><span><i>✦</i></span><span>Include</span><span><i>✦</i></span><span><b>Thrive</b></span><span><i>✦</i></span><span>Every child is able</span><span><i>✦</i></span></div>
+</div></div>
+
+<main class="wrap" id="designs">
+<div class="section-head">
+<div><div class="mono" style="color:#A0604E">The options</div><h2>Five directions</h2></div>
+<p>Tap a card to open the full design. Each one works on phones, tablets and computers.</p>
+</div>
 
 <div class="grid">
-<a class="card e" href="design-e/">
-<span class="ring" aria-hidden="true"></span>
-<div><div class="k">Design E · New</div><div class="name">Kinetic — <span>ability in motion</span></div>
+<a class="card e rv" href="design-e/">
+<span class="glow" aria-hidden="true"></span><span class="ring" aria-hidden="true"></span><span class="num" aria-hidden="true">E</span>
+<span class="thumb" aria-hidden="true"><img src="assets/painting.jpg" alt=""></span>
+<div><div class="k">Design E<span class="badge"><i></i>New</span></div><div class="name">Kinetic — <span>ability in motion</span></div>
 <p class="desc">Dark, stylish and full of movement: an opening title curtain, rotating sunburst, cycling headline, floating photos, scrolling marquees, words that light up as you read, and hover effects everywhere. Smaller, refined type.</p></div>
-<div class="foot"><div class="sw" aria-hidden="true"><span style="background:#140A0C;border-color:rgba(243,233,226,.3)"></span><span style="background:#8C2433"></span><span style="background:#F2C5A4"></span><span style="background:#E8836E"></span><span style="background:#D9A441"></span></div><span class="go">View design E →</span></div>
+<div class="foot"><div class="sw" aria-hidden="true"><span style="background:#140A0C;color:rgba(243,233,226,.35)"></span><span style="background:#8C2433;color:#140A0C"></span><span style="background:#F2C5A4;color:#140A0C"></span><span style="background:#E8836E;color:#140A0C"></span><span style="background:#D9A441;color:#140A0C"></span></div><span class="go">View design E <span class="circ">→</span></span></div>
 </a>
-<a class="card a" href="design-a/">
+<a class="card a rv" href="design-a/">
+<span class="num" aria-hidden="true">A</span>
+<span class="thumb" aria-hidden="true"><img src="assets/team.jpg" alt=""></span>
 <div><div class="k">Design A</div><div class="name">Gallery of Ability</div>
 <p class="desc">Calm, editorial and dignified — like an art catalogue. Elegant serif headlines, lots of space. Speaks most strongly to funders and institutions.</p></div>
-<div class="foot"><div class="sw" aria-hidden="true"><span style="background:#5C1919"></span><span style="background:#CA947A"></span><span style="background:#F4DDCB"></span><span style="background:#F7F1EC"></span></div><span class="go">View design A →</span></div>
+<div class="foot"><div class="sw" aria-hidden="true"><span style="background:#5C1919;color:#FBF7F3"></span><span style="background:#CA947A;color:#FBF7F3"></span><span style="background:#F4DDCB;color:#FBF7F3"></span><span style="background:#F7F1EC;color:rgba(92,25,25,.25)"></span></div><span class="go">View design A <span class="circ">→</span></span></div>
 </a>
-<a class="card b" href="design-b/">
+<a class="card b rv" href="design-b/">
+<span class="num" aria-hidden="true">B</span>
+<span class="thumb" aria-hidden="true"><img src="assets/mentoring.jpg" alt=""></span>
 <div><div class="k">Design B</div><div class="name">Made by Many Hands</div>
 <p class="desc">Warm, tactile and community-led. Bold colour blocks, photo collage, stitched details and handwritten notes that celebrate making.</p></div>
-<div class="foot"><div class="sw" aria-hidden="true"><span style="background:#5C1919"></span><span style="background:#CA947A"></span><span style="background:#F2C5A4"></span><span style="background:#C8963E"></span></div><span class="go">View design B →</span></div>
+<div class="foot"><div class="sw" aria-hidden="true"><span style="background:#5C1919;color:#F2C5A4"></span><span style="background:#CA947A;color:#F2C5A4"></span><span style="background:#FBF4EE;color:#F2C5A4"></span><span style="background:#C8963E;color:#F2C5A4"></span></div><span class="go">View design B <span class="circ">→</span></span></div>
 </a>
-<a class="card c" href="design-c/">
+<a class="card c rv" href="design-c/">
+<span class="num" aria-hidden="true">C</span>
+<span class="thumb" aria-hidden="true"><img src="assets/outdoors.jpg" alt=""></span>
 <div><div class="k">Design C</div><div class="name">Seen. Valued. Able.</div>
 <p class="desc">A bold campaign look on a dark background, with poster-style type, saffron accents and a “change the story” section that challenges stigma.</p></div>
-<div class="foot"><div class="sw" aria-hidden="true"><span style="background:#1E1412"></span><span style="background:#7A1F28"></span><span style="background:#E3A43A"></span><span style="background:#D98A63"></span></div><span class="go">View design C →</span></div>
+<div class="foot"><div class="sw" aria-hidden="true"><span style="background:#2A1C19;color:#1E1412"></span><span style="background:#7A1F28;color:#1E1412"></span><span style="background:#E3A43A;color:#1E1412"></span><span style="background:#D98A63;color:#1E1412"></span></div><span class="go">View design C <span class="circ">→</span></span></div>
 </a>
-<a class="card d" href="design-d/">
+<a class="card d rv" href="design-d/">
+<span class="num" aria-hidden="true">D</span>
+<span class="thumb" aria-hidden="true"><img src="assets/painting.jpg" alt=""></span>
 <div><div class="k">Design D</div><div class="name">The Journey</div>
 <p class="desc">Soft, friendly and family-focused, with rosewood and sage. A five-step journey, programme tabs and an Easy Read button for larger, simpler text.</p></div>
-<div class="foot"><div class="sw" aria-hidden="true"><span style="background:#7A2E3A"></span><span style="background:#4E6447"></span><span style="background:#F4E4E1"></span><span style="background:#FBF8F4"></span></div><span class="go">View design D →</span></div>
+<div class="foot"><div class="sw" aria-hidden="true"><span style="background:#7A2E3A;color:#E4EBDF"></span><span style="background:#4E6447;color:#E4EBDF"></span><span style="background:#F4E4E1;color:#E4EBDF"></span><span style="background:#FBF8F4;color:#E4EBDF"></span></div><span class="go">View design D <span class="circ">→</span></span></div>
 </a>
+</div>
 
+<div class="section-head" style="padding-top:24px">
+<div><div class="mono" style="color:#A0604E">How to review</div><h2>Three quick steps</h2></div>
+</div>
+<div class="steps">
+<div class="step rv"><div class="n">01</div><h3>Open each design</h3><p>Look at every option on your phone first, since most visitors will use one, then on a computer.</p></div>
+<div class="step rv"><div class="n">02</div><h3>Pick a favourite</h3><p>Choose the one that feels most like ALL ARE ABLE. Mixing ideas from two designs is fine too.</p></div>
+<div class="step rv"><div class="n">03</div><h3>Send your details</h3><p>Phone, WhatsApp, email, address, team names, payment details and more photos complete the site.</p></div>
 </div>
 </main>
-<footer class="wrap">Design preview for ALL ARE ABLE · Items marked [CLIENT TO CONFIRM] are placeholders awaiting your details.</footer>
+
+<footer class="wrap"><span>Design preview for ALL ARE ABLE · Empower. Include. Thrive.</span><span>Items marked [CLIENT TO CONFIRM] are placeholders awaiting your details.</span></footer>
+
+<script>
+(function(){
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce||!('IntersectionObserver' in window))return;
+  document.documentElement.classList.add('js');
+  var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){var el=en.target;
+    var sibs=[].slice.call(el.parentNode.querySelectorAll(':scope > .rv'));var i=Math.max(0,sibs.indexOf(el));
+    el.style.transitionDelay=(i%2*120+(i>0?60:0))+'ms';el.classList.add('on');io.unobserve(el);}});},{threshold:.12});
+  [].forEach.call(document.querySelectorAll('.rv'),function(el){io.observe(el)});
+  // 3D tilt + glow on cards (mouse only)
+  [].forEach.call(document.querySelectorAll('.card'),function(c){
+    c.addEventListener('pointermove',function(e){if(e.pointerType!=='mouse')return;var r=c.getBoundingClientRect();
+      var x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+      c.style.transition='transform .25s ease-out, box-shadow .6s, opacity 1s';c.style.transitionDelay='0ms';
+      c.style.transform='rotateX('+(-y*5)+'deg) rotateY('+(x*6)+'deg) translateY(-6px)';
+      c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px');});
+    c.addEventListener('pointerleave',function(){c.style.transition='transform .7s cubic-bezier(.2,.7,.2,1), box-shadow .6s, opacity 1s';c.style.transform='';});
+  });
+})();
+</script>
 </body>
 </html>
