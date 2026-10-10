@@ -37,6 +37,28 @@ input:focus,select:focus,textarea:focus,a:focus-visible{outline:3px solid #C8963
 .mosaic .m-wide{grid-column:span 2}.mosaic .m-tall{grid-row:span 2}
 @media (max-width:720px){.mosaic{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:150px;gap:10px}}
 @media (max-width:720px){.hero-collage{gap:10px!important}.hero-badge{left:-6px!important;bottom:-18px!important}}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.hs{display:grid;margin:22px 0 26px;color:#5C1919}
+.hs>p{grid-area:1/1;margin:0;font-size:clamp(42px,5.2vw,78px);line-height:1.04;letter-spacing:-.015em;opacity:0;animation:tcycle 30s infinite both}
+.hs>p span{display:block}.hs>p em{display:block;font-style:normal;color:#A0604E}
+@keyframes tcycle{0%{opacity:0;transform:translateY(26px)}2.5%,14.5%{opacity:1;transform:none}17.5%{opacity:0;transform:translateY(-18px)}100%{opacity:0;transform:translateY(-18px)}}
+.dots{display:flex;gap:8px;align-items:center}
+.dot{display:block;height:8px;width:8px;border-radius:999px;background:#DCC5BC;animation:dcycle 30s infinite both}
+@keyframes dcycle{0%{background:#DCC5BC;width:8px}1%,16%{background:#5C1919;width:30px}17.5%,100%{background:#DCC5BC;width:8px}}
+.spin{position:relative;aspect-ratio:1/1;margin:0 auto;width:100%;max-width:540px}
+.spin .rays{position:absolute;inset:0;width:100%;height:100%;color:#CA947A;animation:spin 70s linear infinite}
+.spin .rays line{stroke-dasharray:60;stroke-dashoffset:60;animation:draw 1.2s ease forwards}
+.spin .ring2{position:absolute;inset:11%;border-radius:50%;border:1.5px dashed rgba(92,25,25,.35);animation:spin 40s linear infinite reverse}
+.spin .disc{position:absolute;inset:16%;border-radius:50%;overflow:hidden;background:#F2ECEC;box-shadow:0 34px 70px -34px rgba(92,25,25,.6);animation:float 8s ease-in-out infinite}
+.spin .disc img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;animation:icycle 30s infinite both}
+@keyframes icycle{0%{opacity:0;transform:scale(1.12)}3%{opacity:1}16.6%{opacity:1}20%{opacity:0;transform:scale(1)}100%{opacity:0;transform:scale(1)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.brand{display:flex;align-items:center;gap:16px}
+.brand .tag{font-family:Gloock,Georgia,serif;font-size:19px;line-height:1.15;color:#5C1919}
+@media (max-width:720px){.brand .tag{font-size:15px}.spin{max-width:340px}}
+@media (prefers-reduced-motion: reduce){.hs>p,.spin .disc img,.dot,.spin .rays,.spin .rays line,.spin .ring2,.spin .disc{animation:none!important}.hs>p:first-child,.spin .disc img:first-child{opacity:1}.spin .rays line{stroke-dashoffset:0}}
 label{font-family:Figtree,sans-serif;font-size:15px;font-weight:700;color:#3B2A27;display:block;margin-bottom:8px}
 
 *,*::before,*::after{box-sizing:border-box}
@@ -61,7 +83,7 @@ img{max-width:100%}
 <!-- HEADER -->
 <header style="border-bottom: 1px solid rgba(92,25,25,.15); background: #F7F1EC">
 <div class="wrap" style="display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; padding-top: 18px; padding-bottom: 18px">
-<a href="./" aria-label="ALL ARE ABLE home" style="display: inline-flex; text-decoration: none"><img src="../assets/logo.jpeg" alt="ALL ARE ABLE — Empower. Include. Thrive." style="display: block; height: 72px; width: auto; border-radius: 8px"></a>
+<div class="brand"><a href="./" aria-label="ALL ARE ABLE home" style="display: inline-flex; text-decoration: none"><img src="../assets/logo.jpeg" alt="ALL ARE ABLE — Empower. Include. Thrive." style="display: block; height: 72px; width: auto; border-radius: 8px"></a><span class="tag">Empower.<br>Include. Thrive.</span></div>
 <nav class="nav" aria-label="Main" style="display: flex; align-items: center; gap: 28px; flex-wrap: wrap">
 <a href="#about">About</a>
 <a href="#programmes">Programmes</a>
@@ -75,28 +97,39 @@ img{max-width:100%}
 <main id="main">
 
 <!-- HERO -->
-<section style="padding: clamp(48px,7vw,104px) 0 clamp(56px,7vw,96px)">
-<div class="wrap" style="display: flex; flex-wrap: wrap; gap: clamp(40px,5vw,80px); align-items: center">
-<div style="flex: 1 1 520px; min-width: 0">
-<div class="eyebrow">Uganda · Empower. Include. Thrive.</div>
-<h1 class="serif" style="font-size: clamp(48px,6.4vw,92px); line-height: 1.02; letter-spacing: -.015em; color: #5C1919; margin: 24px 0 28px">Every child has a talent. We help the world see it.</h1>
-<p class="body" style="font-size: 20px; max-width: 34em; margin: 0 0 40px">ALL ARE ABLE works with children and youth with intellectual disabilities in Uganda, using skills training, creative arts and inclusive opportunities to help them grow in confidence, independence and pride.</p>
-<div style="display: flex; gap: 16px; flex-wrap: wrap">
+<section style="padding: clamp(40px,6vw,88px) 0 clamp(56px,7vw,96px); overflow: hidden">
+<div class="wrap" style="display: flex; flex-wrap: wrap; gap: clamp(32px,5vw,72px); align-items: center">
+<div style="flex: 1 1 500px; min-width: 0">
+<div class="eyebrow">Uganda · Children &amp; youth with intellectual disabilities</div>
+<h1 class="sr-only">Every child has an ability. We help the world see it.</h1>
+<div class="hs serif" aria-hidden="true">
+<p style="animation-delay: 0s"><span>Every child has an ability.</span> <em>We help the world see it.</em></p>
+<p style="animation-delay: 5s"><span>Skills that open doors.</span> <em>One lesson at a time.</em></p>
+<p style="animation-delay: 10s"><span>Included. Valued.</span> <em>Every young person belongs.</em></p>
+<p style="animation-delay: 15s"><span>Patience unlocks potential.</span> <em>At every learner’s pace.</em></p>
+<p style="animation-delay: 20s"><span>Ability looks different</span> <em>on everyone.</em></p>
+<p style="animation-delay: 25s"><span>A team that believes</span> <em>every child is able.</em></p>
+</div>
+<p class="body" style="font-size: 20px; max-width: 34em; margin: 0 0 32px">ALL ARE ABLE works with children and youth with intellectual disabilities in Uganda, using skills training, creative arts and inclusive opportunities to help them grow in confidence, independence and pride.</p>
+<div style="display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 32px">
 <a class="btn btn-p" href="#involved">Partner with us</a>
 <a class="btn btn-s" href="#programmes">See our programmes</a>
 </div>
+<div class="dots" aria-hidden="true"><span class="dot" style="animation-delay: 0s"></span><span class="dot" style="animation-delay: 5s"></span><span class="dot" style="animation-delay: 10s"></span><span class="dot" style="animation-delay: 15s"></span><span class="dot" style="animation-delay: 20s"></span><span class="dot" style="animation-delay: 25s"></span></div>
 </div>
-<div class="hero-collage" style="flex: 1 1 480px; max-width: 580px; min-width: 0; position: relative; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; align-items: start">
-<svg viewBox="0 0 200 60" aria-hidden="true" style="position: absolute; top: -34px; left: 30%; transform: translateX(-50%); width: 38%; height: auto; color: #CA947A"><g stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="100" y1="58" x2="100" y2="6"/><line x1="100" y1="58" x2="70" y2="12"/><line x1="100" y1="58" x2="130" y2="12"/><line x1="100" y1="58" x2="44" y2="26"/><line x1="100" y1="58" x2="156" y2="26"/><line x1="100" y1="58" x2="22" y2="46"/><line x1="100" y1="58" x2="178" y2="46"/></g></svg>
-<figure style="grid-column: 1 / 4; margin: 0; position: relative">
-<img src="../assets/painting.jpg" alt="Two ALL ARE ABLE staff members kneel beside a young boy as he proudly holds up his colourful painting" style="display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 999px 999px 4px 4px">
-<img src="../assets/young-man.jpg" class="hero-badge" alt="A smiling young man at an ALL ARE ABLE community event" style="position: absolute; left: -22px; bottom: -26px; width: 42%; aspect-ratio: 1 / 1; object-fit: cover; object-position: center 30%; border-radius: 50%; border: 6px solid #F7F1EC">
-</figure>
-<div style="grid-column: 4 / 6; display: flex; flex-direction: column; gap: 14px; padding-top: 48px">
-<img loading="lazy" src="../assets/staff-with-youth.jpg" alt="Two ALL ARE ABLE staff members talking with a young man" style="display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 4px">
-<img loading="lazy" src="../assets/shirt-back.jpg" alt="The back of an ALL ARE ABLE team shirt" style="display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 40%; border-radius: 4px 4px 999px 999px">
+<div class="spin" style="flex: 0 1 540px; min-width: 0">
+<svg class="rays" viewBox="0 0 400 400" aria-hidden="true"><g stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+<line x1="200" y1="34" x2="200" y2="4" style="animation-delay:.9s"/><line x1="283" y1="56" x2="298" y2="30" style="animation-delay:.95s"/><line x1="344" y1="117" x2="370" y2="102" style="animation-delay:1s"/><line x1="366" y1="200" x2="396" y2="200" style="animation-delay:1.05s"/><line x1="344" y1="283" x2="370" y2="298" style="animation-delay:1.1s"/><line x1="283" y1="344" x2="298" y2="370" style="animation-delay:1.15s"/><line x1="200" y1="366" x2="200" y2="396" style="animation-delay:1.2s"/><line x1="117" y1="344" x2="102" y2="370" style="animation-delay:1.25s"/><line x1="56" y1="283" x2="30" y2="298" style="animation-delay:1.3s"/><line x1="34" y1="200" x2="4" y2="200" style="animation-delay:1.35s"/><line x1="56" y1="117" x2="30" y2="102" style="animation-delay:1.4s"/><line x1="117" y1="56" x2="102" y2="30" style="animation-delay:1.45s"/>
+</g></svg>
+<div class="ring2" aria-hidden="true"></div>
+<div class="disc">
+<img src="../assets/painting.jpg" alt="A young boy proudly holds up his colourful painting with two ALL ARE ABLE staff members" style="animation-delay: 0s; object-position: center 40%">
+<img src="../assets/staff-session.jpg" alt="ALL ARE ABLE staff guiding young people during a session" style="animation-delay: 5s">
+<img loading="lazy" src="../assets/young-people-seated.jpg" alt="Young people gathered together at an ALL ARE ABLE event" style="animation-delay: 10s">
+<img loading="lazy" src="../assets/mentoring.jpg" alt="A staff member works one-to-one with a young man" style="animation-delay: 15s; object-position: center 40%">
+<img loading="lazy" src="../assets/wheelchair-users.jpg" alt="Young people, including wheelchair users, at a community event" style="animation-delay: 20s; object-position: center 35%">
+<img loading="lazy" src="../assets/team-mural.jpg" alt="The ALL ARE ABLE team in front of a colourful painted wall" style="animation-delay: 25s">
 </div>
-<p style="grid-column: 1 / -1; font-family: Figtree, sans-serif; font-size: 14px; color: #6B514B; margin: 30px 0 0; display: flex; gap: 10px"><span style="color: #5C1919; font-weight: 700">Fig. 01</span> Creative arts sessions and community days with ALL ARE ABLE.</p>
 </div>
 </div>
 </section>
@@ -340,8 +373,8 @@ img{max-width:100%}
 <div class="wrap">
 <div style="display: flex; flex-wrap: wrap; gap: 48px; justify-content: space-between; align-items: flex-start">
 <div style="flex: 0 1 380px; display: flex; flex-direction: column; gap: 18px; align-items: flex-start">
-<a href="./" aria-label="ALL ARE ABLE home" style="display: inline-flex; text-decoration: none"><img loading="lazy" src="../assets/logo.jpeg" alt="ALL ARE ABLE — Empower. Include. Thrive." style="display: block; height: 120px; width: auto; border-radius: 8px"></a>
-<p class="serif" style="font-size: 22px; line-height: 1.3; color: #FBF6F1; margin: 0">Empower. Include. Thrive.</p>
+<div style="display: flex; align-items: center; gap: 20px"><a href="./" aria-label="ALL ARE ABLE home" style="display: inline-flex; text-decoration: none"><img loading="lazy" src="../assets/logo.jpeg" alt="ALL ARE ABLE — Empower. Include. Thrive." style="display: block; height: 120px; width: auto; border-radius: 8px"></a>
+<p class="serif" style="font-size: 24px; line-height: 1.25; color: #FBF6F1; margin: 0">Empower.<br>Include.<br>Thrive.</p></div>
 </div>
 <nav aria-label="Footer" style="display: flex; gap: 64px; flex-wrap: wrap; font-size: 16px">
 <div style="display: grid; gap: 12px"><span style="font-weight: 700; color: #F2C5A4">Explore</span><a href="#about" style="color: #EBD9D2; text-decoration: none">About</a><a href="#programmes" style="color: #EBD9D2; text-decoration: none">Programmes</a><a href="#involved" style="color: #EBD9D2; text-decoration: none">Get involved</a><a href="#contact" style="color: #EBD9D2; text-decoration: none">Contact</a></div>
